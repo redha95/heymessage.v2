@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity,  } from 'react-native';
+import { StyleSheet, Text, View,Image, TextInput, ScrollView, TouchableOpacity,  } from 'react-native';
 
 import Note from './Note';
 
@@ -41,17 +41,19 @@ render() {
             onChangeText={(noteText) => this.setState({noteText})}
             value={this.state.noteText}
             placeholder='Ecrivez une note..'
-            placeholderTextColor='white'
+            placeholderTextColor='gray'
             underlineColorAndroid='transparent'>
         
       </TextInput>
 
-        </View>
-
+      </View>
         <TouchableOpacity onPress= { this.addNote.bind(this) } style={styles.addButton}>
-          <Text style={styles.addButtonText}>+</Text>
+           <Image source={require('../../image/right-arrow.png')} style={styles.backgroundButton} />
 
           </TouchableOpacity>
+        
+
+
       </View>
   );
  }
@@ -112,28 +114,30 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-        zIndex: 10
+        zIndex: 10,
     },
     textInput: {
         alignSelf: 'stretch',
-        color: '#fff',
-        padding: 20,
-        backgroundColor: '#252525',
-        borderTopWidth:2,
-        borderTopColor: '#ededed'
+        color: 'gray',
+        padding: 15,
+        margin:10,
+        backgroundColor: 'transparent',
+        fontStyle: 'italic',
+        borderRadius:5,
+        borderWidth:2,
+        borderColor: 'gray',
     },
     addButton: {
         position: 'absolute',
         zIndex: 11,
-        right: 20,
-        bottom: 90,
-        backgroundColor: '#E91E63',
-        width: 70,
-        height: 70,
+        right: 12,
+        bottom: 17,
+        backgroundColor: 'white',
+        width: 50,
+        height: 50,
         borderRadius: 35,
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 8
     },
     addButtonText: {
         color: '#fff',
