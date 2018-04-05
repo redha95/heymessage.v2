@@ -30,7 +30,6 @@ render() {
 
     <ScrollView style={styles.scrollContainer}>
 
-    {notes}
     </ScrollView>
 
     <View style={styles.footer}>
@@ -39,7 +38,7 @@ render() {
             style={styles.textInput}
             onChangeText={(noteText) => this.setState({noteText})}
             value={this.state.noteText}
-            placeholder='Ecrivez une note..'
+            placeholder='>note'
             placeholderTextColor='white'
             underlineColorAndroid='transparent'>
         
@@ -57,23 +56,7 @@ render() {
 
  addNote() {
 
-  if(this.state.noteText) {
-
-    var d = new Date();
-    this.state.noteArray.push({
-
-      'date': d.getFullYear() + "/" + (d.getMonth()+ 1)+"/" + d.getDate(),
-      'note' : this.state.noteText
-    });
-    this.setState({ noteArray: this.state.noteArray })
-    this.setState({ noteText: ''});
-  }
-   
- }
-
- deleteNote(key) {
-   this.state.noteArray.splice(key,1);
-   this.setState({noteArray: this.state.noteArray })
+   alert('test');
  }
 }
 
