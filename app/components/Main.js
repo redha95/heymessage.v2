@@ -68,6 +68,7 @@ render() {
     this.setState({ noteArray: this.state.noteArray })
     this.setState({ noteText: ''});
   }
+  
    
  }
 

@@ -9,6 +9,7 @@ import {
 
 export default class Note extends Component {
     render() {
+        
         return (
             <View key={this.props.keyval} style={styles.note}>
                 <Text style={styles.noteText}>{this.props.val.date}</Text>
