@@ -1,8 +1,25 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity,  } from 'react-native';
 
-export default class App extends React.Component {
+import Note from './Note';
+
+export default class Main extends React.Component {
+
+  constructor(props) {
+
+    super(props);
+    this.state = {
+      noteArray: [],
+      noteText: '',
+    }
+  }
 render() {
+
+  let notes = this.state.noteArray.map((val, key) => {
+    return <Note key={key} keyval= {key} val= {val}
+      deleteMethod={ ()=> this.deleteNote(key) } />
+  });
+
   return (
     <View style={styles.container}>
 
@@ -19,6 +36,8 @@ render() {
 
       <TextInput
             style={styles.textInput}
+            onChangeText={(noteText) => this.setState({noteText})}
+            value={this.state.noteText}
             placeholder='>note'
             placeholderTextColor='white'
             underlineColorAndroid='transparent'>
@@ -26,8 +45,18 @@ render() {
       </TextInput>
 
         </View>
+
+        <TouchableOpacity onPress= { this.addNote.bind(this) } style={styles.addButton}>
+          <Text style={styles.addButtonText}>+</Text>
+
+          </TouchableOpacity>
       </View>
   );
+ }
+
+ addNote() {
+
+   alert('test');
  }
 }
 
