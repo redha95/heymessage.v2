@@ -24,7 +24,8 @@ render() {
     <View style={styles.container}>
 
       <View style={styles.header}>
-        <Text style={styles.headerText}> HeyMessage 2.0 </Text>
+        <Text style={styles.headerText}> HeyMessage</Text>
+        <Text style={styles.miniText}> by Redha & Omar</Text>
         </View>
     
 
@@ -68,7 +69,7 @@ render() {
     this.setState({ noteArray: this.state.noteArray })
     this.setState({ noteText: ''});
   }
-  
+
    
  }
 
@@ -86,14 +87,22 @@ const styles = StyleSheet.create({
         backgroundColor: '#E91E63',
         alignItems: 'center',
         justifyContent:'center',
-        borderBottomWidth: 10,
-        borderBottomColor: '#ddd'
+        borderBottomWidth: 5,
+        borderBottomColor: '#f2f2f2'
     },
     headerText: {
         color: 'white',
         fontSize: 18,
-        padding: 26
+        fontStyle: 'italic',
+        paddingTop: 30,
+        fontWeight:'bold'
     },
+
+    miniText: {
+      fontSize: 10,
+        fontStyle: 'italic',
+    },
+
     scrollContainer: {
         flex: 1,
         marginBottom: 100

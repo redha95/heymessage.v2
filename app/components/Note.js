@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
+    Image,
     StyleSheet,
     TouchableOpacity,
 } from 'react-native';
@@ -9,14 +10,14 @@ import {
 
 export default class Note extends Component {
     render() {
-        
+
         return (
             <View key={this.props.keyval} style={styles.note}>
                 <Text style={styles.noteText}>{this.props.val.date}</Text>
                 <Text style={styles.noteText}>{this.props.val.note}</Text>
 
                 <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
-                    <Text style={styles.noteDeleteText}>X</Text>
+                    <Image source={require('../../image/rubbish-bin.png')} style={styles.backgroundButton} />
                 </TouchableOpacity>
             </View>
         );
@@ -41,13 +42,14 @@ const styles = StyleSheet.create({
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#2980b9',
+        backgroundColor: 'white',
         padding: 10,
         top: 10,
         bottom: 10,
         right: 10
     },
     noteDeleteText: {
-        color: 'white'
+        color: 'black'
+        
     }
 });
