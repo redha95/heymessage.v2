@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View,Image, TextInput, ScrollView, TouchableOpacity,  } from 'react-native';
+import { StyleSheet, Text, View,Image, TextInput, ScrollView, TouchableOpacity, Button, } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 import Note from './Note';
 
@@ -26,6 +27,11 @@ render() {
       <View style={styles.header}>
         <Text style={styles.headerText}> HeyMessage</Text>
         <Text style={styles.miniText}> by Redha & Omar</Text>
+        
+          <TouchableOpacity onPress= { () => this.props.navigation.navigate('Settings')} style={styles.settingsButton}>
+           <Image source={require('../../image/settings24.png')}  />
+
+          </TouchableOpacity>
         </View>
     
 
@@ -48,13 +54,14 @@ render() {
 
       </View>
         <TouchableOpacity onPress= { this.addNote.bind(this) } style={styles.addButton}>
-           <Image source={require('../../image/right-arrow.png')} style={styles.backgroundButton} />
+           <Image source={require('../../image/right-arrow.png')} />
 
           </TouchableOpacity>
         
 
 
       </View>
+      
   );
  }
 
@@ -132,7 +139,7 @@ const styles = StyleSheet.create({
         zIndex: 11,
         right: 12,
         bottom: 17,
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
         width: 50,
         height: 50,
         borderRadius: 35,
@@ -142,5 +149,12 @@ const styles = StyleSheet.create({
     addButtonText: {
         color: '#fff',
         fontSize: 24
-    }
+    },
+    settingsButton: {
+      position: 'absolute',
+      right:10,
+      top:35,
+      
+    },
 }); 
+
