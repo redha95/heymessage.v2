@@ -23,6 +23,9 @@ const RootStack = StackNavigator(
         },
         Settings: {
             screen: Settings,
+            navigationOptions: {
+              header:null,
+            }
         },
     },
     {
